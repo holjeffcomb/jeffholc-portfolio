@@ -1,0 +1,19 @@
+extends layout.pug
+
+block content
+
+  article.portfolio-intro
+
+    h1 Hey, Potential Employers
+
+    p Here are some various projects I've been working on to develop my fullstack JavaScript skills
+
+  article.portfolio-project-thumbs
+    .projects-box.box.grid
+
+      each item in projects
+        .cell
+          a(href=`/projects/${item.id}`)
+            img.thumbnail(src=`${item.image_urls[0]}`, alt=`${item.project_name}`)
+            h5= item.project_name
+
